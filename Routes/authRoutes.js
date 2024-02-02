@@ -19,7 +19,6 @@ const registerSchema = Joi.object({
 
 const notAllowed = (req,res) => res.status(405).json('method not allowed')
 
-
 router.route('/api/userLogin').post(validator.body(loginSchema),userLogin).all(notAllowed)
 router.route('/api/userSignUp').post(validator.body(registerSchema),userSignup).all(notAllowed)
 
